@@ -16,8 +16,9 @@ public class Main {
         try {
             ObjectMapper mapper = new ObjectMapper();
 
-            // convert JSON file to map
-            List<Book> listOfBooks = mapper.readValue(Files.readAllBytes(Paths.get("resources/sample.json")), new TypeReference<List<Book>>() {});
+            File file = new File("src/resources/sample.json");
+
+            List<Book> listOfBooks = mapper.readValue(Files.readAllBytes(Paths.get("src/resources/sample.json")), new TypeReference<List<Book>>() {});
 
             for(Book book : listOfBooks) {
                 System.out.println(book.getTitle());
@@ -28,18 +29,27 @@ public class Main {
             }
             System.out.println("\n");
 
-            File file = new File("resources/sample.json");
+            /* ------------------------------------------------------------------------------------ */
+
             JsonNode sample = mapper.readValue(file, JsonNode.class);
+            System.out.println(sample.toPrettyString());
+
+            System.out.println("\n");
 
             JsonNode book2 = sample.get(1);
             ((ObjectNode) book2).put("title", "C++ Book");
             System.out.println(sample.toPrettyString());
+            System.out.println("\n");
+
+            /* ------------------------------------------------------------------------------------ */
 
             JsonNode authors = sample.get(0).get("authors");
             ArrayNode author = (ArrayNode) authors;
-
             System.out.println(authors);
             System.out.println(author);
+            System.out.println("\n");
+
+            /* ------------------------------------------------------------------------------------ */
 
             List<String> authorsList = mapper.readValue(authors.toPrettyString(), new TypeReference<List<String>>(){});
 
