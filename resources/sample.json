@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Thinking in Java 1",
+    "isbn": "978-0131872486",
+    "year": 1998,
+    "authors": [
+      "Bruce Eckel",
+      "John Doe",
+      "Jim Jimster"
+    ]
+  },
+  {
+    "title": "Thinking in Java 2",
+    "isbn": "978-12341234",
+    "year": 1999,
+    "authors": [
+      "Bruce Eckel",
+      "John Doe"
+    ]
+  },
+  {
+    "title": "Thinking in Java 3",
+    "isbn": "978-7890890789",
+    "year": 2000,
+    "authors": [
+      "Bruce Eckel",
+      "John Doe",
+      "Jim Jimster",
+      "Jill Jillster"
+    ]
+  }
+]
